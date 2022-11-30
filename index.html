@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>我的博客</title>
+        <meta charset="UTF-8">
+        <style>
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+            html {
+                height: 100%;
+            }
+            body {
+                min-height: 100%;
+            }
+            h1 {
+                margin: 0;
+            }
+        
+            #main {
+                order: 1;
+                display: flex;
+                flex-direction: column;
+            }
+            #slideboard {
+                background-color: black;
+                color: white;
+            }
+            #profile {
+                width: 250px;
+                flex-shrink: 0;
+                text-align: center;
+                padding-top: 50px;
+            }
+            #profile h1 {
+                font-size: 1.5rem;
+                font-weight: normal;
+            }
+            #catalog {
+                padding-left: 20px;
+                line-height: 30px;
+
+            }
+            body {
+                display: flex;
+            }
+            article {
+                padding-bottom: 30px;
+                border-bottom: solid 1px #ccc;
+                position: relative;
+            }
+            article .pubtime {
+                position: absolute;
+                top: 5px;
+                right: 5px;
+            }
+            article a:link {
+                color: #333;
+            }
+            section {
+                flex-grow: 1;
+                margin-bottom: 30px;
+            }
+            section h2 {
+                font-weight: normal;
+            }
+            section p {
+                line-height: 180%;
+            }
+            p.target {
+                color: red;
+            }
+            a {
+                text-decoration: none;
+            }
+            a:link {
+                color: orange;
+            }
+
+            a:hover {
+                color: brown;
+            }
+
+            a:active {
+                color: yellow;
+            }
+
+            a:visited {
+                color: coral;
+            }
+
+            a.target {
+                color: green;
+            }
+            a.target:link {
+                color: pink;
+            }
+            em {
+                border-bottom-style: dotted;
+            }
+            img.myimage {
+                width: 200px;
+                height: 50px;
+                background-color: white;
+                border: solid 5px red;
+                margin-top: 30px;
+                box-sizing: content-box;
+            }
+            footer {
+                border-top: 1px solid #ccc;
+                text-align: center;
+                line-height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main">
+            <h1>测试标题index</h1>
+            <section>
+                <article>
+                    <a href="xx"><h2>文章标题</h2></a>
+                    <p>文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
+                    <div class="pubtime">发布时间:<em>2022-1-10</em></div>
+                    <div><a href="">浏览全部</a></div>
+                </article>
+                <article>
+                    <h2>文章标题</h2>
+                    <p class="target">文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
+                    <div class="pubtime">发布时间:<em>2022-1-12</em></div>
+                    <div><a class="target" href="">浏览全部</a></div>
+                </article>
+                <article>
+                    <h2>文章标题</h2>
+                    <p>文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
+                    <div class="pubtime">发布时间:<em>2022-1-10</em></div>
+                    <div><a href="">浏览全部</a></div>
+                </article>
+                <article>
+                    <h2>文章标题</h2>
+                    <p>文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容文章内容</p>
+                    <div class="pubtime">发布时间:<em>2022-1-10</em></div>
+                    <div><a href="22">浏览全部</a></div>
+                </article>
+            </section>
+            
+            <footer>@底部商标</footer>
+        </div>
+        <div id="slideboard">
+            <div id="profile">
+                <div class="head"><a href=""><div><img  class="myimage" src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=423474926,1801248814&fm=179&app=35&f=PNG?w=518&h=136&s=ADFEEB16D210A1925C7BF2EA0300E03E"></div></div>
+                <h1>我的博客</h1>
+            </div>
+            <div id="catalog">
+                <div><a href="">首页</a></div>
+                <div><a href="">友联</a></div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            const elements = document.querySelectorAll('.pubtime em');
+            elements.forEach((e)=> {
+                const date = new Date(e.innerHTML);
+                const newContent = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+                e.innerHTML = newContent;
+            });
+
+            let title = document.title;
+            window.addEventListener('blur', ()=>{
+                document.title = '快回来啊';
+            });
+            window.addEventListener('focus', ()=>{
+                document.title = title;
+            });
+        </script>
+    </body>
+</html>
